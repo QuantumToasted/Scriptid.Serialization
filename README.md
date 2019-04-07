@@ -1,2 +1,2 @@
 # Scriptid.Serialization
-A serializer for transforming Scriptid code into JSON syntax trees.
+A serializer for transforming Scriptid code into abstract syntax trees.

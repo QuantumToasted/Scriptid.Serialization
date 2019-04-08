@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using Scriptid.Serialization.AST;
 
@@ -102,14 +102,13 @@ namespace Scriptid.Serialization
                 if (otherPrecedence > precedence)
                 {
                     _lexer.Next();
-                    if ((string) opToken.Value == "=")
-                    {
-                        return new Assignment(left, MaybeBinary(ParseAtomic(), otherPrecedence));
-                    }
 
+                    var value = (string) opToken.Value;
                     Operator op;
-                    switch ((string) opToken.Value)
+                    switch (value)
                     {
+                        case "=":
+                            return MaybeBinary(new Assignment(left, MaybeBinary(ParseAtomic(), otherPrecedence)), precedence);
                         case "+":
                             op = Operator.Add;
                             break;
@@ -149,7 +148,7 @@ namespace Scriptid.Serialization
                         default:
                             throw new Exception($"Expected operator: {opToken.Value}");
                     }
-                    return new Binary(op, left, MaybeBinary(ParseAtomic(), otherPrecedence));
+                    return MaybeBinary(new Binary(op, left, MaybeBinary(ParseAtomic(), otherPrecedence)), precedence);
                 }
             }
 

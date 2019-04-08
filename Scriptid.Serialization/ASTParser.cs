@@ -1,4 +1,4 @@
-using System;
+﻿using System;
 using System.Collections.Generic;
 using Scriptid.Serialization.AST;
 
@@ -249,15 +249,16 @@ namespace Scriptid.Serialization
                 switch (token.Type)
                 {
                     case TokenType.Keyword:
-                        return new Keyword((string) token.Value); // TODO: Does this go here?
+                        var iden = ParseIdentifier();
+                        return new Assignment(iden, MaybeBinary(iden, OperatorPrecedences["="]));
+                        // return new Keyword((string) token.Value); // TODO: Does this go here?
                     case TokenType.Number:
-                        return new Number(int.Parse((string) token.Value));
+                        return new Number(int.Parse(token.Value.ToString()));
                     case TokenType.String:
                         return new AST.String((string) token.Value);
                     case TokenType.Identifier: // TODO: Does this go here?
                         return new Identifier((string) token.Value);
-                        // return ParseIdentifier();
-                    // TODO: TokenType.Embed, and various embed types
+                    // TODO: TokenType.Embed, and various future types
                     default:
                         throw new Exception($"Invalid data type: {token.Value}");
                 }

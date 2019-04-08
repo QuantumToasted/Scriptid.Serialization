@@ -7,6 +7,9 @@ namespace Scriptid.Tests
     {
         private const string CODE = @"
 str test = ""Hello, World!"";
+num test2 = 5 + 5;
+test2 = test2 + 25;
+num test3 = test2 + 10;
 ";
         [Fact]
         public void Test1()

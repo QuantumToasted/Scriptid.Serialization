@@ -3,9 +3,9 @@ using System.Runtime.Serialization;
 
 namespace Scriptid.Serialization.AST
 {
-    public sealed class Call : Node
+    public class Call : Node
     {
-        internal Call(Func<Node> func, Node[] args)
+        public Call(Func<Node> func, Node[] args)
         {
             Func = func;
             Args = args;

@@ -2,9 +2,9 @@
 
 namespace Scriptid.Serialization.AST
 {
-    public sealed class Keyword : Node
+    public class Keyword : Node
     {
-        internal Keyword(string word)
+        public Keyword(string word)
         {
             Word = word;
         }

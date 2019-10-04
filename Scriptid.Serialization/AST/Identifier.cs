@@ -2,9 +2,9 @@
 
 namespace Scriptid.Serialization.AST
 {
-    public sealed class Identifier : Node
+    public class Identifier : Node
     {
-        internal Identifier(string name)
+        public Identifier(string name)
         {
             Name = name;
         }

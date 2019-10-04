@@ -2,9 +2,9 @@
 
 namespace Scriptid.Serialization.AST
 {
-    public sealed class Assignment : Node
+    public class Assignment : Node
     {
-        internal Assignment(Node left, Node right)
+        public Assignment(Node left, Node right)
         {
             Left = left;
             Right = right;

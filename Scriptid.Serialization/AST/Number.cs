@@ -2,9 +2,9 @@
 
 namespace Scriptid.Serialization.AST
 {
-    public sealed class Number : Node
+    public class Number : Node
     {
-        internal Number(int value)
+        public Number(int value)
         {
             Value = value;
         }

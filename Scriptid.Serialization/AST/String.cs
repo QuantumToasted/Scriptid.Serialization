@@ -2,7 +2,7 @@
 
 namespace Scriptid.Serialization.AST
 {
-    public sealed class String : Node
+    public class String : Node
     {
         internal String(string value)
         {

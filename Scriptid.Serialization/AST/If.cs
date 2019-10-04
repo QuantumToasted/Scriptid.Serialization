@@ -2,9 +2,9 @@
 
 namespace Scriptid.Serialization.AST
 {
-    public sealed class If : Node
+    public class If : Node
     {
-        internal If(Node condition, Node then, Node @else)
+        public If(Node condition, Node then, Node @else)
         {
             Condition = condition;
             Then = then;

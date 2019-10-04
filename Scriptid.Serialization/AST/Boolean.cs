@@ -2,9 +2,9 @@
 
 namespace Scriptid.Serialization.AST
 {
-    public sealed class Boolean : Node
+    public class Boolean : Node
     {
-        internal Boolean(bool value)
+        public Boolean(bool value)
         {
             Value = value;
         }

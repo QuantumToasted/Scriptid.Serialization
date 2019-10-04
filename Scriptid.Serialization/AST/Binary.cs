@@ -2,9 +2,9 @@
 
 namespace Scriptid.Serialization.AST
 {
-    public sealed class Binary : Node
+    public class Binary : Node
     {
-        internal Binary(Operator @operator, Node left, Node right)
+        public Binary(Operator @operator, Node left, Node right)
         {
             Operator = @operator;
             Left = left;

@@ -3,7 +3,7 @@ using System.Runtime.Serialization;
 
 namespace Scriptid.Serialization.AST
 {
-    public sealed class Program : Node
+    public class Program : Node
     {
         public Program(Node[] steps)
         {
